@@ -1,0 +1,217 @@
+.mail-pro {
+    background-color: var(--gray-50);
+    min-height: calc(100vh - 80px);
+    padding: 2rem;
+}
+
+.mail-header-pro {
+    margin-bottom: 2rem;
+}
+
+.mail-header-pro h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--gray-900);
+    margin-bottom: 0.25rem;
+}
+
+.mail-header-pro p {
+    font-size: 1.125rem;
+    color: var(--gray-600);
+}
+
+.mail-grid-pro {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.mail-card-pro {
+    display: flex;
+    flex-direction: column;
+}
+
+.mail-form-pro {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.form-group-pro {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-pro label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+.form-input-pro, .form-textarea-pro {
+    padding: 0.875rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--gray-300);
+    font-size: 1rem;
+    background-color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.form-input-pro:focus, .form-textarea-pro:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.btn-pro-submit {
+    align-self: flex-start;
+    background: var(--primary);
+    color: var(--white);
+    font-weight: 700;
+    border: none;
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-pro-submit:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-pro-submit:disabled {
+    background: var(--gray-400);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.status-banner-pro {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.status-banner-pro.success {
+    background-color: #D1FAE5; /* Green-100 */
+    color: #065F46; /* Green-800 */
+}
+
+.status-banner-pro.error {
+    background-color: #FEE2E2; /* Red-100 */
+    color: #991B1B; /* Red-800 */
+}
+
+.status-banner-pro.info {
+    background-color: #DBEAFE; /* Blue-100 */
+    color: #1E40AF; /* Blue-800 */
+}
+
+.notification-card-pro {
+    display: flex;
+    flex-direction: column;
+}
+
+.notification-card-pro .status-tag-pro {
+    background-color: var(--success);
+}
+
+.info-text-pro {
+    font-size: 1.0625rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-top: 1.5rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .mail-grid-pro {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mail-pro {
+        padding: 1rem;
+    }
+    
+    .mail-header-pro h1 {
+        font-size: 2rem;
+    }
+    
+    .mail-header-pro p {
+        font-size: 1rem;
+    }
+    
+    .mail-grid-pro {
+        gap: 1.5rem;
+    }
+    
+    .card-pro {
+        padding: 1.5rem;
+    }
+    
+    .mail-form-pro {
+        gap: 1.25rem;
+    }
+    
+    .form-input-pro, .form-textarea-pro {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.9375rem;
+    }
+    
+    .btn-pro-submit {
+        width: 100%;
+        padding: 0.875rem 1.5rem;
+    }
+    
+    .info-text-pro {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mail-pro {
+        padding: 0.75rem;
+    }
+    
+    .mail-header-pro h1 {
+        font-size: 1.75rem;
+    }
+    
+    .card-pro {
+        padding: 1.25rem;
+        border-radius: 16px;
+    }
+    
+    .card-header-pro h2 {
+        font-size: 1.25rem;
+    }
+    
+    .mail-form-pro {
+        gap: 1rem;
+    }
+    
+    .form-group-pro label {
+        font-size: 0.9375rem;
+    }
+    
+    .form-input-pro, .form-textarea-pro {
+        padding: 0.625rem 0.75rem;
+        font-size: 0.875rem;
+    }
+    
+    .btn-pro-submit {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9375rem;
+    }
+    
+    .status-banner-pro {
+        padding: 0.875rem;
+        font-size: 0.875rem;
+    }
+}

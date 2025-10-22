@@ -1,0 +1,227 @@
+.history-pro {
+    background-color: var(--gray-50);
+    min-height: calc(100vh - 80px);
+    padding: 2rem;
+}
+
+.history-header-pro {
+    margin-bottom: 2rem;
+}
+
+.history-header-pro h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--gray-900);
+    margin-bottom: 0.25rem;
+}
+
+.history-header-pro p {
+    font-size: 1.125rem;
+    color: var(--gray-600);
+}
+
+.history-card-pro {
+    padding: 0;
+    overflow: hidden;
+}
+
+.history-controls-pro {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.filter-select-pro {
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--gray-300);
+    background-color: var(--white);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray-800);
+}
+
+.table-container-pro {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-pro {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table-pro th, .table-pro td {
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.table-pro thead th {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray-600);
+    background-color: var(--gray-100);
+    cursor: pointer;
+}
+
+.table-pro tbody tr:hover {
+    background-color: var(--primary-light);
+}
+
+.loading-cell, .no-data-cell {
+    text-align: center;
+    padding: 3rem;
+    color: var(--gray-600);
+}
+
+.event-tag-pro {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.event-tag-pro.valve_closed {
+    background-color: #EF4444;
+}
+
+.event-tag-pro.valve_open {
+    background-color: var(--success);
+}
+
+.event-tag-pro.leak_detected {
+    background-color: #F59E0B; /* Amber */
+}
+
+.pagination-pro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--gray-200);
+}
+
+.pagination-pro button {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid var(--gray-300);
+    background: var(--white);
+    color: var(--gray-800);
+}
+
+.pagination-pro button:disabled {
+    background: var(--gray-100);
+    color: var(--gray-400);
+    cursor: not-allowed;
+}
+
+.pagination-pro span {
+    font-size: 0.9375rem;
+    color: var(--gray-700);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .table-pro th, .table-pro td {
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .history-pro {
+        padding: 1rem;
+    }
+    
+    .history-header-pro h1 {
+        font-size: 2rem;
+    }
+    
+    .history-header-pro p {
+        font-size: 1rem;
+    }
+    
+    .history-controls-pro {
+        padding: 1rem 1.5rem;
+    }
+    
+    .filter-select-pro {
+        width: 100%;
+        padding: 0.625rem 0.875rem;
+        font-size: 0.9375rem;
+    }
+    
+    .table-container-pro {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .table-pro {
+        min-width: 600px;
+    }
+    
+    .table-pro th, .table-pro td {
+        padding: 0.875rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    .table-pro thead th {
+        font-size: 0.75rem;
+    }
+    
+    .pagination-pro {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+    }
+    
+    .pagination-pro button {
+        width: 100%;
+        padding: 0.625rem 1rem;
+    }
+    
+    .pagination-pro span {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .history-pro {
+        padding: 0.75rem;
+    }
+    
+    .history-header-pro h1 {
+        font-size: 1.75rem;
+    }
+    
+    .history-card-pro {
+        border-radius: 16px;
+    }
+    
+    .history-controls-pro {
+        padding: 1rem;
+    }
+    
+    .table-pro {
+        min-width: 500px;
+    }
+    
+    .table-pro th, .table-pro td {
+        padding: 0.75rem 0.75rem;
+        font-size: 0.8125rem;
+    }
+    
+    .event-tag-pro {
+        padding: 0.25rem 0.625rem;
+        font-size: 0.75rem;
+    }
+    
+    .pagination-pro {
+        padding: 1rem;
+    }
+}

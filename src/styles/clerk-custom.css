@@ -1,0 +1,76 @@
+body {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.clerk-auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.cl-card {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(20px) !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+  color: #ffffff !important;
+}
+
+.cl-headerTitle, .cl-headerSubtitle, .cl-socialButtonsBlockButtonText, .cl-footerActionText, .cl-formFieldLabel, .cl-formButtonPrimary, .cl-identityPreview, .cl-identityPreviewText, .cl-internal-b3fm6y {
+  color: #ffffff !important;
+}
+
+.cl-formFieldInput {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+}
+
+.cl-formFieldInput::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.cl-formButtonPrimary {
+  background-color: #3b82f6 !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 8px !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.cl-formButtonPrimary:hover {
+  background-color: #2563eb !important;
+}
+
+.cl-socialButtonsBlockButton {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 8px !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.cl-socialButtonsBlockButton:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.cl-footerActionLink {
+  color: #93c5fd !important;
+  font-weight: 600 !important;
+}
+
+.cl-dividerLine {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.cl-dividerText {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
