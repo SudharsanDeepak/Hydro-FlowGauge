@@ -317,7 +317,7 @@ export default function LandingPro() {
                             delay={500}
                         />
                         <FeatureCard
-                            icon={<WaterDropIcon className="feature-icon" />}
+                            icon={<WaterDropIcon className="mail-icon" />}
                             title="Mail notification alert"
                             description="when the water flows continuously for certain period of time, then the valve gets closed automatically and send he mail to the added reciptants."
                             delay={500}
