@@ -316,6 +316,12 @@ export default function LandingPro() {
                             description="Reduce water waste by up to 40% with intelligent monitoring and automated controls."
                             delay={500}
                         />
+                        <FeatureCard
+                            icon={<WaterDropIcon className="feature-icon" />}
+                            title="Mail notification alert"
+                            description="when the water flows continuously for certain period of time, then the valve gets closed automatically and send he mail to the added reciptants."
+                            delay={500}
+                        />
                     </div>
                 </div>
             </section>
