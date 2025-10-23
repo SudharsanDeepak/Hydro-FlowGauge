@@ -53,6 +53,21 @@ const StarIcon = ({ className = "" }) => (
     </svg>
 );
 
+const HardwareIcon = ({ className = "" }) => (
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+        <rect x="9" y="9" width="6" height="6"></rect>
+        <line x1="9" y1="1" x2="9" y2="4"></line>
+        <line x1="15" y1="1" x2="15" y2="4"></line>
+        <line x1="9" y1="20" x2="9" y2="23"></line>
+        <line x1="15" y1="20" x2="15" y2="23"></line>
+        <line x1="20" y1="9" x2="23" y2="9"></line>
+        <line x1="20" y1="14" x2="23" y2="14"></line>
+        <line x1="1" y1="9" x2="4" y2="9"></line>
+        <line x1="1" y1="14" x2="4" y2="14"></line>
+    </svg>
+);
+
 const AnimatedCounter = ({ end, duration = 2000, suffix = "" }) => {
     const [count, setCount] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
@@ -299,9 +314,9 @@ export default function LandingPro() {
                             delay={200}
                         />
                         <FeatureCard
-                            icon={<BellIcon className="feature-icon" />}
-                            title="Instant Alerts"
-                            description="Receive immediate notifications via email, SMS, or mobile app when issues are detected."
+                            icon={<HardwareIcon className="feature-icon" />}
+                            title="Best Hardware Integration"
+                            description="The Water-FlowGauge is built with the high accurate mechanism with the help of the IoT integration to make this strong."
                             delay={300}
                         />
                         <FeatureCard
@@ -316,10 +331,10 @@ export default function LandingPro() {
                             description="Reduce water waste by up to 40% with intelligent monitoring and automated controls."
                             delay={500}
                         />
-                        <FeatureCard
-                            icon={<WaterDropIcon className="mail-icon" />}
-                            title="Mail notification alert"
-                            description="when the water flows continuously for certain period of time, then the valve gets closed automatically and send he mail to the added reciptants."
+                       <FeatureCard
+                            icon={<BellIcon className="feature-icon" />}
+                            title="Email Notification Alerts"
+                            description="When water flows continuously for a certain period, the valve automatically closes and sends email notifications to designated recipients."
                             delay={500}
                         />
                     </div>
