@@ -226,9 +226,6 @@ export default function LandingPro() {
                 </div>
                 
                 <div className="hero-content">
-                    <div className="hero-badge">
-                        
-                    </div>
                     
                     <h1 className="hero-title">
                         Protect Your Farm's<br />
