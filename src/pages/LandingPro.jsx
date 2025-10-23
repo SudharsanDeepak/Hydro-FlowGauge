@@ -293,12 +293,6 @@ export default function LandingPro() {
                             delay={0}
                         />
                         <FeatureCard
-                            icon={<ShieldCheckIcon className="feature-icon" />}
-                            title="AI Leak Detection"
-                            description="Advanced machine learning algorithms detect even the smallest leaks before they become costly problems."
-                            delay={100}
-                        />
-                        <FeatureCard
                             icon={<ZapIcon className="feature-icon" />}
                             title="Auto Shut-Off"
                             description="Smart valves automatically close when leaks are detected, preventing catastrophic water loss."
@@ -362,17 +356,6 @@ export default function LandingPro() {
                         <div className="step">
                             <div className="step-number">03</div>
                             <div className="step-content">
-                                <h3 className="step-title">AI Learning</h3>
-                                <p className="step-description">
-                                    Our AI learns your farm's unique water usage patterns over the first week to provide accurate leak detection.
-                                </p>
-                            </div>
-                            <div className="step-line"></div>
-                        </div>
-                        
-                        <div className="step">
-                            <div className="step-number">04</div>
-                            <div className="step-content">
                                 <h3 className="step-title">Relax & Save</h3>
                                 <p className="step-description">
                                     Sit back while HydroFlow monitors 24/7, automatically prevents leaks, and saves you money every single day.
@@ -412,10 +395,6 @@ export default function LandingPro() {
                             <div className="free-feature">
                                 <CheckIcon className="free-check" />
                                 <span>24/7 monitoring & support</span>
-                            </div>
-                            <div className="free-feature">
-                                <CheckIcon className="free-check" />
-                                <span>AI-powered leak detection</span>
                             </div>
                         </div>
                     </div>
