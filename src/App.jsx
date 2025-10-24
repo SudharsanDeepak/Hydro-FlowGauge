@@ -6,17 +6,21 @@ import Dashboard from './pages/Dashboard';
 import History from './pages/History';
 import Mail from './pages/Mail';
 import Header from './pages/Header';
+import { setGetToken } from './services/api';
 import './styles/App.css';
 
 function ProtectedRoute() {
-  const { isLoaded, isSignedIn } = useAuth();
+  const { isLoaded, isSignedIn, getToken } = useAuth();
   const [hasCheckedAuth, setHasCheckedAuth] = React.useState(false);
   
   React.useEffect(() => {
     if (isLoaded) {
       setHasCheckedAuth(true);
+      if (getToken) {
+        setGetToken(getToken);
+      }
     }
-  }, [isLoaded]);
+  }, [isLoaded, getToken]);
   
   if (!isLoaded || !hasCheckedAuth) {
     return <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>Loading...</div>;

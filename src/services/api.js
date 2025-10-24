@@ -5,42 +5,47 @@ const API = axios.create({
   timeout: 10000,
 });
 
-const getClerkToken = async () => {
-  try {
-    if (window.Clerk) {
-      const session = await window.Clerk.session;
-      if (session) {
-        const token = await session.getToken();
-        return token;
-      }
-    }
-  } catch (error) {
-    console.log('Could not get Clerk token:', error.message);
-  }
-  return null;
+let getTokenFunction = null;
+
+export const setGetToken = (getTokenFn) => {
+  getTokenFunction = getTokenFn;
 };
 
 API.interceptors.request.use(
   async (config) => {
-    const clerkToken = await getClerkToken();
-    
-    if (clerkToken) {
-      config.headers['Authorization'] = `Bearer ${clerkToken}`;
-      console.log('✅ Using Clerk token for request');
-      return config;
+    if (getTokenFunction) {
+      try {
+        const token = await getTokenFunction();
+        if (token) {
+          config.headers['Authorization'] = `Bearer ${token}`;
+          return config;
+        }
+      } catch (error) {
+        console.error('Error getting Clerk token:', error);
+      }
     }
     
     const localToken = localStorage.getItem('token');
     if (localToken) {
       config.headers['Authorization'] = `Bearer ${localToken}`;
-      console.log('⚠️ Using localStorage token (legacy)');
       return config;
     }
     
-    console.warn('⚠️ No authentication token available');
     return config;
   },
   (error) => {
+    return Promise.reject(error);
+  }
+);
+
+API.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      console.error('Authentication failed - redirecting to login');
+    } else if (error.response?.status === 500) {
+      console.error('Server error:', error.response.data);
+    }
     return Promise.reject(error);
   }
 );

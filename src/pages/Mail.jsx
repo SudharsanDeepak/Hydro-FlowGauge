@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import API from "../services/api";
+import { useAuth } from "@clerk/clerk-react";
+import API, { setGetToken } from "../services/api";
 import "../styles/Mail.css";
 
 export default function Mail() {
+  const { getToken, isLoaded } = useAuth();
   const [recipients, setRecipients] = useState([]);
   const [newRecipient, setNewRecipient] = useState({ email: "", name: "" });
   const [editingId, setEditingId] = useState(null);
@@ -10,12 +12,15 @@ export default function Mail() {
   const [status, setStatus] = useState({ message: "", type: "" });
   const [loading, setLoading] = useState(false);
   const [smtpStatus, setSmtpStatus] = useState(null);
+  const [smtpLoading, setSmtpLoading] = useState(true);
 
-  // Fetch recipients on component mount
   useEffect(() => {
-    fetchRecipients();
-    checkEmailStatus();
-  }, []);
+    if (isLoaded && getToken) {
+      setGetToken(getToken);
+      fetchRecipients();
+      checkEmailStatus();
+    }
+  }, [isLoaded, getToken]);
 
   const fetchRecipients = async () => {
     try {
@@ -28,11 +33,16 @@ export default function Mail() {
   };
 
   const checkEmailStatus = async () => {
+    setSmtpLoading(true);
     try {
       const response = await API.get("/mail/status");
+      console.log('SMTP Status Response:', response.data);
       setSmtpStatus(response.data);
     } catch (err) {
       console.error("Failed to check email status:", err);
+      setSmtpStatus({ smtpConfigured: false, status: 'error' });
+    } finally {
+      setSmtpLoading(false);
     }
   };
 
@@ -173,17 +183,17 @@ export default function Mail() {
         <div className="card-pro notification-card-pro">
           <div className="card-header-pro">
             <h2>Automatic Notifications</h2>
-            <div className={`status-tag-pro ${smtpStatus?.smtpConfigured ? 'active' : 'inactive'}`}>
-              {smtpStatus?.smtpConfigured ? 'Active' : 'Not Configured'}
+            <div className={`status-tag-pro ${smtpLoading ? '' : smtpStatus?.smtpConfigured ? 'active' : 'inactive'}`}>
+              {smtpLoading ? 'Checking...' : smtpStatus?.smtpConfigured ? 'Active' : 'Not Configured'}
             </div>
           </div>
           <p className="info-text-pro">
             The system automatically sends email alerts to you and all active recipients when the water valve closes due to continuous flow for more than 5 minutes.
           </p>
-          {!smtpStatus?.smtpConfigured && (
-            <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#FEE2E2', borderRadius: '8px', border: '1px solid #FCA5A5' }}>
-              <p style={{ fontSize: '0.875rem', color: '#991B1B', margin: 0 }}>
-                <strong>⚠️ Warning:</strong> SMTP is not configured. Email notifications will not be sent. Please configure SMTP settings in your .env file.
+          {!smtpLoading && smtpStatus && (
+            <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: smtpStatus.smtpConfigured ? '#D1FAE5' : '#FEE2E2', borderRadius: '8px', border: `1px solid ${smtpStatus.smtpConfigured ? '#10B981' : '#FCA5A5'}` }}>
+              <p style={{ fontSize: '0.875rem', color: smtpStatus.smtpConfigured ? '#065F46' : '#991B1B', margin: 0 }}>
+                <strong>{smtpStatus.smtpConfigured ? '✅ Success:' : '⚠️ Warning:'}</strong> {smtpStatus.smtpConfigured ? 'SMTP is configured and ready to send email notifications.' : 'SMTP is not configured. Email notifications will not be sent. Please configure SMTP settings in your .env file.'}
               </p>
             </div>
           )}
