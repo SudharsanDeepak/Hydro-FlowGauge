@@ -248,7 +248,7 @@ export default function LandingPro() {
                     </h1>
                     
                     <p className="hero-subtitle">
-                        AI-powered water monitoring that detects leaks instantly, prevents waste automatically,
+                        water monitoring system that detects leaks instantly, prevents waste automatically,
                         and saves you thousands. Join 500+ farms already protecting their water supply.
                     </p>
                     
@@ -417,6 +417,10 @@ export default function LandingPro() {
                                 <CheckIcon className="free-check" />
                                 <span>24/7 monitoring & support</span>
                             </div>
+                             <div className="free-feature">
+                                <CheckIcon className="free-check" />
+                                <span>Best user interface</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -482,10 +486,10 @@ export default function LandingPro() {
                 <div className="footer-simple">
                     <div className="footer-logo">
                         <WaterDropIcon className="footer-logo-icon" />
-                        <span>HydroFlow Guardian</span>
+                        <span>Hydro-FlowGauge</span>
                     </div>
                     <p className="footer-text">
-                        &copy; {new Date().getFullYear()} HydroFlow Guardian. Smart water monitoring for modern farms.
+                       Stay save ands save your water with Hydro-FlowGauge!...
                     </p>
                 </div>
             </footer>

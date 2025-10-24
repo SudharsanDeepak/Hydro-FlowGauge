@@ -18,17 +18,14 @@ function ProtectedRoute() {
     }
   }, [isLoaded]);
   
-  // Show loading state only on initial load
   if (!isLoaded || !hasCheckedAuth) {
     return <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>Loading...</div>;
   }
   
-  // If not signed in, redirect to landing page (only once, not on every render)
   if (!isSignedIn) {
     return <Navigate to="/" replace />;
   }
   
-  // If signed in, render the layout with outlet for child routes
   return (
     <>
       <Header />
@@ -45,7 +42,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         
-        {/* Clerk authentication routes */}
         <Route path="/login" element={
           <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'}}>
             <SignIn routing="path" path="/login" signUpUrl="/signup" afterSignInUrl="/dashboard" />
@@ -57,14 +53,12 @@ export default function App() {
           </div>
         } />
         
-        {/* Protected routes */}
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/history" element={<History />} />
           <Route path="/mail" element={<Mail />} />
         </Route>
         
-        {/* Catch all - redirect to dashboard if signed in, landing if not */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>

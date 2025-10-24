@@ -1,12 +1,12 @@
 :root {
-    --primary: #3B82F6;
-    --primary-dark: #1D4ED8;
-    --primary-light: #EFF6FF;
-    --secondary: #64748B;
-    --accent: #3B82F6;
-    --success: #10B981;
-    --dark: #0F172A;
-    --dark-blue: #1E40AF;
+    --primary: #3B82F6;       
+    --primary-dark: #1D4ED8;    
+    --primary-light: #EFF6FF;  
+    --secondary: #64748B;      
+    --accent: #3B82F6;        
+    --success: #10B981;       
+    --dark: #0F172A;          
+    --dark-blue: #1E40AF;      
     --gray-900: #0F172A;
     --gray-800: #1E293B;
     --gray-700: #334155;
@@ -18,34 +18,28 @@
     --gray-100: #F1F5F9;
     --gray-50: #F8FAFC;
     --white: #FFFFFF;
-
     --shadow-xl: 0 20px 25px -5px rgba(59, 130, 246, 0.2);
     --shadow-2xl: 0 25px 50px -12px rgba(59, 130, 246, 0.3);
     --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     --container-width: 1280px;
     --section-padding: 120px;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
 }
-
 body {
     font-family: var(--font-sans);
     background: var(--white);
 }
-
 .landing-pro {
     overflow-x: hidden;
 }
-
 .nav {
     position: fixed;
     top: 0;
@@ -58,13 +52,11 @@ body {
     border-bottom: 1px solid rgba(59, 130, 246, 0.1);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .nav-scrolled {
     background: var(--white);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
     padding: 1rem 0;
 }
-
 .nav-container {
     max-width: var(--container-width);
     margin: 0 auto;
@@ -74,7 +66,6 @@ body {
     justify-content: space-between;
     color: var(--primary-dark);
 }
-
 .nav-logo {
     display: flex;
     align-items: center;
@@ -85,24 +76,20 @@ body {
     letter-spacing: -0.02em;
     transition: transform 0.2s ease;
 }
-
 .nav-logo:hover {
     transform: scale(1.02);
 }
-
 .nav-logo-icon {
     width: 36px;
     height: 36px;
     color: var(--primary);
     filter: drop-shadow(0 2px 8px rgba(59, 130, 246, 0.3));
 }
-
 .nav-links {
     display: flex;
     gap: 2.5rem;
     align-items: center;
 }
-
 .nav-links a {
     color: var(--gray-700);
     text-decoration: none;
@@ -112,7 +99,6 @@ body {
     padding: 0.5rem 0;
     transition: color 0.3s ease;
 }
-
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -124,20 +110,16 @@ body {
     border-radius: 2px;
     transition: width 0.3s ease;
 }
-
 .nav-links a:hover {
     color: var(--primary);
 }
-
 .nav-links a:hover::after {
     width: 100%;
 }
-
 .nav-actions {
     display: flex;
     gap: 1rem;
 }
-
 .nav-button {
     padding: 0.75rem 1.75rem;
     border-radius: 50px;
@@ -148,19 +130,16 @@ body {
     border: none;
     letter-spacing: 0.01em;
 }
-
 .nav-button-secondary {
     background: var(--gray-100);
     color: var(--gray-800);
     border: 2px solid transparent;
 }
-
 .nav-button-secondary:hover {
     background: var(--gray-200);
     border-color: var(--gray-300);
     transform: translateY(-2px);
 }
-
 .nav-button-primary {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: var(--white);
@@ -168,7 +147,6 @@ body {
     position: relative;
     overflow: hidden;
 }
-
 .nav-button-primary::before {
     content: '';
     position: absolute;
@@ -179,17 +157,14 @@ body {
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     transition: left 0.5s ease;
 }
-
 .nav-button-primary:hover::before {
     left: 100%;
 }
-
 .nav-button-primary:hover {
     background: linear-gradient(135deg, var(--primary-dark) 0%, #1E40AF 100%);
     transform: translateY(-3px);
     box-shadow: 0 6px 24px rgba(59, 130, 246, 0.5);
 }
-
 .hero {
     position: relative;
     min-height: 100vh;
@@ -199,19 +174,16 @@ body {
     padding: 8rem 2rem 4rem;
     overflow: hidden;
 }
-
 .hero-background {
     position: absolute;
     inset: 0;
     z-index: 0;
 }
-
 .hero-gradient {
     position: absolute;
     inset: 0;
     background: var(--primary);
 }
-
 .hero-grid {
     position: absolute;
     inset: 0;
@@ -221,7 +193,6 @@ body {
     background-size: 50px 50px;
     mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black, transparent);
 }
-
 .hero-orb {
     position: absolute;
     border-radius: 50%;
@@ -229,7 +200,6 @@ body {
     opacity: 0.6;
     animation: float 20s ease-in-out infinite;
 }
-
 .hero-orb-1 {
     width: 500px;
     height: 500px;
@@ -237,7 +207,6 @@ body {
     top: -10%;
     right: 10%;
 }
-
 .hero-orb-2 {
     width: 400px;
     height: 400px;
@@ -246,7 +215,6 @@ body {
     left: 5%;
     animation-delay: 5s;
 }
-
 .hero-orb-3 {
     width: 300px;
     height: 300px;
@@ -255,14 +223,12 @@ body {
     left: 50%;
     animation-delay: 10s;
 }
-
 .hero-content {
     position: relative;
     z-index: 1;
     max-width: 900px;
     text-align: center;
 }
-
 .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -278,7 +244,6 @@ body {
     margin-bottom: 2rem;
     animation: fade-in-up 0.8s ease-out;
 }
-
 .hero-title {
     font-size: clamp(2.5rem, 6vw, 5rem);
     font-weight: 900;
@@ -288,14 +253,12 @@ body {
     margin-bottom: 1.5rem;
     animation: fade-in-up 0.8s ease-out 0.2s both;
 }
-
 .hero-title-gradient {
     background: linear-gradient(135deg, #FFFFFF 0%, #E0F2FF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-
 .hero-subtitle {
     font-size: clamp(1.125rem, 2vw, 1.375rem);
     color: rgba(255, 255, 255, 0.9);
@@ -306,7 +269,6 @@ body {
     margin-right: auto;
     animation: fade-in-up 0.8s ease-out 0.4s both;
 }
-
 .hero-actions {
     display: flex;
     gap: 1rem;
@@ -315,7 +277,6 @@ body {
     margin-bottom: 4rem;
     animation: fade-in-up 0.8s ease-out 0.6s both;
 }
-
 .hero-button {
     display: inline-flex;
     align-items: center;
@@ -328,29 +289,24 @@ body {
     transition: all 0.3s;
     border: none;
 }
-
 .hero-button-primary {
     background: var(--white);
     color: var(--primary);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
-
 .hero-button-primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
-
 .hero-button-secondary {
     background: rgba(255, 255, 255, 0.1);
     color: var(--white);
     border: 2px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
 }
-
 .hero-button-secondary:hover {
     background: rgba(255, 255, 255, 0.2);
 }
-
 .hero-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -359,7 +315,6 @@ body {
     margin: 0 auto;
     animation: fade-in-up 0.8s ease-out 0.8s both;
 }
-
 .hero-stat-number {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 900;
@@ -367,78 +322,61 @@ body {
     line-height: 1;
     margin-bottom: 0.5rem;
 }
-
 .hero-stat-label {
     font-size: 0.875rem;
     color: rgba(255, 255, 255, 0.8);
     font-weight: 600;
 }
-
 .section {
     padding: var(--section-padding) 2rem;
 }
-
 .section-dark {
     background: var(--dark-blue) !important;
 }
-
 .section-dark .section-badge {
     background: rgba(255, 255, 255, 0.15);
     color: var(--white);
 }
-
 .section-dark .section-title {
     color: var(--white);
 }
-
 .section-dark .section-subtitle {
     color: rgba(255, 255, 255, 0.9);
 }
-
 .section-dark .step-title {
     color: var(--white);
 }
-
 .section-dark .step-description {
     color: rgba(255, 255, 255, 0.85);
 }
-
 .section-dark .step-line {
     background: rgba(255, 255, 255, 0.3);
 }
-
 .section-dark .testimonial-card {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
 }
-
 .section-dark .testimonial-quote {
     color: rgba(255, 255, 255, 0.95);
 }
-
 .section-dark .testimonial-name {
     color: var(--white);
 }
-
 .section-dark .testimonial-role {
     color: rgba(255, 255, 255, 0.7);
 }
-
 .section-dark .testimonial-star {
     color: var(--white);
 }
-
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
 }
-
 .section-header {
     text-align: center;
     margin-bottom: 4rem;
 }
-
 .section-badge {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -451,7 +389,6 @@ body {
     letter-spacing: 0.05em;
     margin-bottom: 1rem;
 }
-
 .section-title {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 900;
@@ -460,7 +397,6 @@ body {
     letter-spacing: -0.02em;
     margin-bottom: 1rem;
 }
-
 .section-subtitle {
     font-size: clamp(1rem, 2vw, 1.25rem);
     color: var(--gray-600);
@@ -468,17 +404,14 @@ body {
     max-width: 600px;
     margin: 0 auto;
 }
-
 .features-section {
     background: var(--primary-light);
 }
-
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
 }
-
 .feature-card {
     background: var(--white);
     padding: 2.5rem;
@@ -488,17 +421,14 @@ body {
     opacity: 0;
     transform: translateY(30px);
 }
-
 .animate-in .feature-card {
     animation: fade-in-up 0.6s ease-out forwards;
 }
-
 .feature-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-2xl);
     border-color: var(--primary);
 }
-
 .feature-card-icon {
     width: 64px;
     height: 64px;
@@ -510,31 +440,26 @@ body {
     margin-bottom: 1.5rem;
     box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
 }
-
 .feature-icon {
     width: 32px;
     height: 32px;
     color: var(--white);
 }
-
 .feature-card-title {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--gray-900);
     margin-bottom: 0.75rem;
 }
-
 .feature-card-description {
     font-size: 1rem;
     color: var(--gray-600);
     line-height: 1.7;
 }
-
 .steps-container {
     max-width: 800px;
     margin: 0 auto;
 }
-
 .step {
     display: grid;
     grid-template-columns: 80px 1fr;
@@ -542,11 +467,9 @@ body {
     padding: 2rem 0;
     position: relative;
 }
-
 .step:not(:last-child) {
     padding-bottom: 4rem;
 }
-
 .step-number {
     width: 80px;
     height: 80px;
@@ -560,24 +483,20 @@ body {
     color: var(--white);
     box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
 }
-
 .step-content {
     padding-top: 0.5rem;
 }
-
 .step-title {
     font-size: 1.75rem;
     font-weight: 700;
     color: var(--gray-900);
     margin-bottom: 0.75rem;
 }
-
 .step-description {
     font-size: 1.0625rem;
     color: var(--gray-600);
     line-height: 1.7;
 }
-
 .step-line {
     position: absolute;
     left: 40px;
@@ -586,21 +505,17 @@ body {
     width: 2px;
     background: var(--primary);
 }
-
 .step:last-child .step-line {
     display: none;
 }
-
 .free-platform-section {
     background: var(--white);
 }
-
 .free-platform-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
-
 .free-badge {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -614,14 +529,12 @@ body {
     margin-bottom: 2rem;
     box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
 }
-
 .free-features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
     margin-top: 3rem;
 }
-
 .free-feature {
     display: flex;
     align-items: center;
@@ -635,24 +548,20 @@ body {
     font-weight: 500;
     transition: all 0.3s;
 }
-
 .free-feature:hover {
     border-color: var(--success);
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
 }
-
 .free-check {
     flex-shrink: 0;
     color: var(--success);
 }
-
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
 }
-
 .testimonial-card {
     background: var(--gray-50);
     padding: 2rem;
@@ -662,39 +571,32 @@ body {
     opacity: 0;
     transform: translateY(30px);
 }
-
 .animate-in .testimonial-card {
     animation: fade-in-up 0.6s ease-out forwards;
 }
-
 .testimonial-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-xl);
 }
-
 .testimonial-rating {
     display: flex;
     gap: 0.25rem;
     margin-bottom: 1rem;
 }
-
 .testimonial-star {
     color: var(--primary);
 }
-
 .testimonial-quote {
     font-size: 1.0625rem;
     color: var(--gray-700);
     line-height: 1.7;
     margin-bottom: 1.5rem;
 }
-
 .testimonial-author {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
-
 .testimonial-avatar {
     width: 48px;
     height: 48px;
@@ -707,23 +609,19 @@ body {
     font-weight: 700;
     color: var(--white);
 }
-
 .testimonial-name {
     font-weight: 700;
     color: var(--gray-900);
 }
-
 .testimonial-role {
     font-size: 0.875rem;
     color: var(--gray-600);
 }
-
 .cta-section {
     background: var(--primary);
     position: relative;
     overflow: hidden;
 }
-
 .cta-section::before {
     content: '';
     position: absolute;
@@ -733,7 +631,6 @@ body {
         linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
 }
-
 .cta-container {
     max-width: 800px;
     margin: 0 auto;
@@ -741,7 +638,6 @@ body {
     position: relative;
     z-index: 1;
 }
-
 .cta-title {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 900;
@@ -749,14 +645,12 @@ body {
     line-height: 1.2;
     margin-bottom: 1rem;
 }
-
 .cta-subtitle {
     font-size: clamp(1rem, 2vw, 1.25rem);
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
     margin-bottom: 2.5rem;
 }
-
 .cta-actions {
     display: flex;
     gap: 1rem;
@@ -764,7 +658,6 @@ body {
     flex-wrap: wrap;
     margin-bottom: 1.5rem;
 }
-
 .cta-button {
     padding: 1rem 2rem;
     border-radius: 50px;
@@ -773,40 +666,33 @@ body {
     transition: all 0.3s;
     border: none;
 }
-
 .cta-button-primary {
     background: var(--white);
     color: var(--primary);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
-
 .cta-button-primary:hover {
     transform: translateY(-3px);
 }
-
 .cta-button-secondary {
     background: rgba(255, 255, 255, 0.1);
     color: var(--white);
     border: 2px solid rgba(255, 255, 255, 0.3);
 }
-
 .cta-note {
     font-size: 0.875rem;
     color: rgba(255, 255, 255, 0.8);
 }
-
 .footer {
     background: var(--gray-900);
     color: var(--gray-400);
     padding: 2.5rem 2rem;
 }
-
 .footer-simple {
     max-width: var(--container-width);
     margin: 0 auto;
     text-align: center;
 }
-
 .footer-logo {
     display: inline-flex;
     align-items: center;
@@ -816,19 +702,16 @@ body {
     color: var(--white);
     margin-bottom: 0.75rem;
 }
-
 .footer-logo-icon {
     width: 32px;
     height: 32px;
     color: var(--primary);
 }
-
 .footer-text {
     font-size: 0.9375rem;
     color: var(--gray-400);
     line-height: 1.6;
 }
-
 @keyframes fade-in-up {
     from {
         opacity: 0;
@@ -839,7 +722,6 @@ body {
         transform: translateY(0);
     }
 }
-
 @keyframes float {
     0%, 100% {
         transform: translate(0, 0);
@@ -854,632 +736,496 @@ body {
         transform: translate(20px, 20px);
     }
 }
-
 .animate-on-scroll {
     opacity: 0;
 }
-
 .animate-on-scroll.animate-in {
     opacity: 1;
     animation: fade-in-up 0.8s ease-out forwards;
 }
-
 @media (max-width: 1200px) {
     :root {
         --section-padding: 100px;
     }
-    
     .features-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
-    
     .testimonials-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 }
-
 @media (max-width: 1024px) {
     :root {
         --section-padding: 80px;
     }
-    
     .nav-container {
         padding: 0 1.5rem;
     }
-    
     .hero {
         padding: 7rem 1.5rem 4rem;
     }
-    
     .section {
         padding: 80px 1.5rem;
     }
 }
-
 @media (max-width: 768px) {
     :root {
         --section-padding: 60px;
     }
-    
     .nav {
         padding: 1rem 0;
     }
-    
     .nav-container {
         padding: 0 1rem;
     }
-    
     .nav-links {
         display: none;
     }
-    
     .nav-logo {
         font-size: 1.25rem;
     }
-    
     .nav-logo-icon {
         width: 32px;
         height: 32px;
     }
-    
     .nav-actions {
         gap: 0.75rem;
     }
-    
     .nav-button {
         padding: 0.625rem 1.25rem;
         font-size: 0.875rem;
     }
-    
     .hero {
         padding: 6rem 1rem 3rem;
         min-height: auto;
     }
-    
     .hero-badge {
         font-size: 0.8125rem;
         padding: 0.375rem 1rem;
         margin-bottom: 1.5rem;
     }
-    
     .hero-title {
         font-size: clamp(2rem, 8vw, 3rem);
         margin-bottom: 1.25rem;
     }
-    
     .hero-subtitle {
         font-size: clamp(1rem, 3vw, 1.125rem);
         margin-bottom: 2rem;
     }
-    
     .hero-actions {
         margin-bottom: 3rem;
     }
-    
     .hero-button {
         padding: 0.875rem 1.75rem;
         font-size: 1rem;
     }
-    
     .hero-stats {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
-    
     .hero-stat-number {
         font-size: clamp(1.75rem, 5vw, 2.5rem);
     }
-    
     .hero-stat-label {
         font-size: 0.8125rem;
     }
-    
     .section {
         padding: 60px 1rem;
     }
-    
     .section-header {
         margin-bottom: 3rem;
     }
-    
     .section-badge {
         font-size: 0.8125rem;
         padding: 0.375rem 0.875rem;
     }
-    
     .section-title {
         font-size: clamp(1.75rem, 6vw, 2.5rem);
     }
-    
     .section-subtitle {
         font-size: clamp(0.9375rem, 2.5vw, 1.125rem);
     }
-    
     .features-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
     .feature-card {
         padding: 2rem;
     }
-    
     .feature-card-icon {
         width: 56px;
         height: 56px;
         margin-bottom: 1.25rem;
     }
-    
     .feature-icon {
         width: 28px;
         height: 28px;
     }
-    
     .feature-card-title {
         font-size: 1.375rem;
     }
-    
     .feature-card-description {
         font-size: 0.9375rem;
     }
-    
     .step {
         grid-template-columns: 60px 1fr;
         gap: 1.5rem;
         padding: 1.5rem 0;
     }
-    
     .step:not(:last-child) {
         padding-bottom: 3rem;
     }
-    
     .step-number {
         width: 60px;
         height: 60px;
         font-size: 1.25rem;
     }
-    
     .step-line {
         left: 30px;
         top: 60px;
         bottom: -30px;
     }
-    
     .step-title {
         font-size: 1.5rem;
     }
-    
     .step-description {
         font-size: 1rem;
     }
-    
     .free-badge {
         font-size: 0.9375rem;
         padding: 0.625rem 1.25rem;
     }
-    
     .free-features {
         grid-template-columns: 1fr;
         gap: 1.25rem;
     }
-    
     .free-feature {
         padding: 1rem 1.25rem;
         font-size: 1rem;
     }
-    
     .testimonials-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
     .testimonial-card {
         padding: 1.75rem;
     }
-    
     .testimonial-quote {
         font-size: 1rem;
     }
-    
     .cta-title {
         font-size: clamp(1.75rem, 6vw, 2.5rem);
     }
-    
     .cta-subtitle {
         font-size: clamp(0.9375rem, 2.5vw, 1.125rem);
         margin-bottom: 2rem;
     }
-    
     .cta-button {
         padding: 0.875rem 1.75rem;
         font-size: 1rem;
     }
-    
     .footer {
         padding: 2rem 1rem;
     }
-    
     .footer-logo {
         font-size: 1.125rem;
     }
-    
     .footer-logo-icon {
         width: 28px;
         height: 28px;
     }
 }
-
 @media (max-width: 640px) {
-    /* Navigation */
     .nav-container {
         padding: 0 0.75rem;
     }
-    
     .nav-logo {
         font-size: 1.125rem;
     }
-    
     .nav-logo-icon {
         width: 28px;
         height: 28px;
     }
-    
     .nav-actions {
         gap: 0.5rem;
     }
-    
     .nav-button {
         padding: 0.5rem 1rem;
         font-size: 0.8125rem;
     }
-    
     .hero {
         padding: 5rem 0.75rem 2.5rem;
     }
-    
     .hero-badge {
         font-size: 0.75rem;
         padding: 0.375rem 0.875rem;
     }
-    
     .hero-title {
         font-size: clamp(1.75rem, 10vw, 2.5rem);
     }
-    
     .hero-actions {
         flex-direction: column;
         width: 100%;
         margin-bottom: 2.5rem;
     }
-    
     .hero-button {
         width: 100%;
         justify-content: center;
         padding: 1rem 1.5rem;
     }
-    
     .hero-stats {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem 1.25rem;
     }
-    
     .section {
         padding: 50px 0.75rem;
     }
-    
     .section-header {
         margin-bottom: 2.5rem;
     }
-    
     .features-grid {
         gap: 1.25rem;
     }
-    
     .feature-card {
         padding: 1.75rem;
     }
-    
     .feature-card-icon {
         width: 52px;
         height: 52px;
     }
-    
     .feature-card-title {
         font-size: 1.25rem;
     }
-    
     .step {
         grid-template-columns: 50px 1fr;
         gap: 1.25rem;
     }
-    
     .step-number {
         width: 50px;
         height: 50px;
         font-size: 1.125rem;
     }
-    
     .step-line {
         left: 25px;
         top: 50px;
     }
-    
     .step-title {
         font-size: 1.375rem;
     }
-    
     .cta-actions {
         flex-direction: column;
         width: 100%;
     }
-    
     .cta-button {
         width: 100%;
         justify-content: center;
     }
 }
-
 @media (max-width: 480px) {
     .nav {
         padding: 0.875rem 0;
     }
-    
     .nav-container {
         padding: 0 0.5rem;
     }
-    
     .nav-logo {
         font-size: 1rem;
     }
-    
     .nav-logo-icon {
         width: 26px;
         height: 26px;
     }
-    
     .nav-actions {
         gap: 0.375rem;
     }
-    
     .nav-button {
         padding: 0.5rem 0.875rem;
         font-size: 0.75rem;
     }
-    
     .hero {
         padding: 4.5rem 0.5rem 2rem;
     }
-    
     .hero-badge {
         font-size: 0.6875rem;
         padding: 0.3125rem 0.75rem;
         margin-bottom: 1.25rem;
     }
-    
     .hero-title {
         font-size: clamp(1.5rem, 12vw, 2rem);
         margin-bottom: 1rem;
     }
-    
     .hero-subtitle {
         font-size: clamp(0.875rem, 4vw, 1rem);
         margin-bottom: 1.75rem;
     }
-    
     .hero-button {
         padding: 0.875rem 1.25rem;
         font-size: 0.9375rem;
     }
-    
     .hero-stats {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem 1rem;
         max-width: 100%;
     }
-    
     .hero-stat {
         text-align: center;
     }
-    
     .hero-stat-number {
         font-size: clamp(1.75rem, 6vw, 2.25rem);
     }
-    
     .hero-stat-label {
         font-size: 0.8125rem;
     }
-    
     .section {
         padding: 40px 0.5rem;
     }
-    
     .section-badge {
         font-size: 0.75rem;
         padding: 0.3125rem 0.75rem;
     }
-    
     .section-title {
         font-size: clamp(1.5rem, 8vw, 2rem);
     }
-    
     .section-subtitle {
         font-size: clamp(0.875rem, 3vw, 1rem);
     }
-    
     .features-grid {
         gap: 1rem;
     }
-    
     .feature-card {
         padding: 1.5rem;
         border-radius: 20px;
     }
-    
     .feature-card-icon {
         width: 48px;
         height: 48px;
         border-radius: 12px;
     }
-    
     .feature-icon {
         width: 24px;
         height: 24px;
     }
-    
     .feature-card-title {
         font-size: 1.125rem;
     }
-    
     .feature-card-description {
         font-size: 0.875rem;
     }
-    
     .steps-container {
         padding: 0 0.5rem;
     }
-    
     .step {
         grid-template-columns: 45px 1fr;
         gap: 1rem;
         padding: 1.25rem 0;
     }
-    
     .step:not(:last-child) {
         padding-bottom: 2.5rem;
     }
-    
     .step-number {
         width: 45px;
         height: 45px;
         font-size: 1rem;
     }
-    
     .step-line {
         left: 22.5px;
         top: 45px;
         bottom: -25px;
     }
-    
     .step-title {
         font-size: 1.25rem;
     }
-    
     .step-description {
         font-size: 0.9375rem;
     }
-    
     .free-badge {
         font-size: 0.875rem;
         padding: 0.5rem 1rem;
     }
-    
     .free-features {
         gap: 1rem;
     }
-    
     .free-feature {
         padding: 0.875rem 1rem;
         font-size: 0.9375rem;
         border-radius: 12px;
     }
-    
     .testimonials-grid {
         gap: 1.25rem;
     }
-    
     .testimonial-card {
         padding: 1.5rem;
         border-radius: 16px;
     }
-    
     .testimonial-quote {
         font-size: 0.9375rem;
         margin-bottom: 1.25rem;
     }
-    
     .testimonial-avatar {
         width: 40px;
         height: 40px;
         font-size: 1.125rem;
     }
-    
     .testimonial-name {
         font-size: 0.9375rem;
     }
-    
     .testimonial-role {
         font-size: 0.8125rem;
     }
-    
     .cta-title {
         font-size: clamp(1.5rem, 8vw, 2rem);
     }
-    
     .cta-subtitle {
         font-size: clamp(0.875rem, 3vw, 1rem);
         margin-bottom: 1.75rem;
     }
-    
     .cta-button {
         padding: 0.875rem 1.25rem;
         font-size: 0.9375rem;
         border-radius: 40px;
     }
-    
     .cta-note {
         font-size: 0.8125rem;
     }
-    
     .footer {
         padding: 1.75rem 0.5rem;
     }
-    
     .footer-logo {
         font-size: 1rem;
     }
-    
     .footer-logo-icon {
         width: 24px;
         height: 24px;
     }
-    
     .footer-text {
         font-size: 0.875rem;
     }
 }
-
 @media (max-width: 375px) {
     .hero {
         padding: 4rem 0.5rem 1.75rem;
     }
-    
     .hero-title {
         font-size: clamp(1.375rem, 14vw, 1.75rem);
     }
-    
     .hero-button {
         padding: 0.75rem 1rem;
         font-size: 0.875rem;
     }
-    
     .section {
         padding: 35px 0.5rem;
     }
-    
     .feature-card {
         padding: 1.25rem;
     }
-    
     .step {
         grid-template-columns: 40px 1fr;
     }
-    
     .step-number {
         width: 40px;
         height: 40px;
         font-size: 0.9375rem;
     }
-    
     .step-line {
         left: 20px;
         top: 40px;
