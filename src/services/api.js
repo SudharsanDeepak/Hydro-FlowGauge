@@ -5,12 +5,9 @@ const API = axios.create({
   timeout: 10000,
 });
 
-// Function to get Clerk token
 const getClerkToken = async () => {
   try {
-    // Wait for Clerk to be loaded
     if (window.Clerk) {
-      // Use the correct method to get session token
       const session = await window.Clerk.session;
       if (session) {
         const token = await session.getToken();
@@ -25,7 +22,6 @@ const getClerkToken = async () => {
 
 API.interceptors.request.use(
   async (config) => {
-    // Try to get Clerk session token
     const clerkToken = await getClerkToken();
     
     if (clerkToken) {
@@ -34,7 +30,6 @@ API.interceptors.request.use(
       return config;
     }
     
-    // Fallback to localStorage token (JWT) - for backward compatibility
     const localToken = localStorage.getItem('token');
     if (localToken) {
       config.headers['Authorization'] = `Bearer ${localToken}`;

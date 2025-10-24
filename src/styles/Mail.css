@@ -115,8 +115,14 @@
     flex-direction: column;
 }
 
-.notification-card-pro .status-tag-pro {
+.notification-card-pro .status-tag-pro.active {
     background-color: var(--success);
+    color: var(--white);
+}
+
+.notification-card-pro .status-tag-pro.inactive {
+    background-color: #FEE2E2;
+    color: #991B1B;
 }
 
 .info-text-pro {

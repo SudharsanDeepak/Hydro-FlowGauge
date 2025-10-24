@@ -9,10 +9,12 @@ export default function Mail() {
   const [editData, setEditData] = useState({ email: "", name: "" });
   const [status, setStatus] = useState({ message: "", type: "" });
   const [loading, setLoading] = useState(false);
+  const [smtpStatus, setSmtpStatus] = useState(null);
 
   // Fetch recipients on component mount
   useEffect(() => {
     fetchRecipients();
+    checkEmailStatus();
   }, []);
 
   const fetchRecipients = async () => {
@@ -22,6 +24,15 @@ export default function Mail() {
     } catch (err) {
       console.error("Failed to fetch recipients:", err);
       showStatus("Failed to load recipients", "error");
+    }
+  };
+
+  const checkEmailStatus = async () => {
+    try {
+      const response = await API.get("/mail/status");
+      setSmtpStatus(response.data);
+    } catch (err) {
+      console.error("Failed to check email status:", err);
     }
   };
 
@@ -162,11 +173,20 @@ export default function Mail() {
         <div className="card-pro notification-card-pro">
           <div className="card-header-pro">
             <h2>Automatic Notifications</h2>
-            <div className="status-tag-pro active">Active</div>
+            <div className={`status-tag-pro ${smtpStatus?.smtpConfigured ? 'active' : 'inactive'}`}>
+              {smtpStatus?.smtpConfigured ? 'Active' : 'Not Configured'}
+            </div>
           </div>
           <p className="info-text-pro">
             The system automatically sends email alerts to you and all active recipients when the water valve closes due to continuous flow for more than 5 minutes.
           </p>
+          {!smtpStatus?.smtpConfigured && (
+            <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#FEE2E2', borderRadius: '8px', border: '1px solid #FCA5A5' }}>
+              <p style={{ fontSize: '0.875rem', color: '#991B1B', margin: 0 }}>
+                <strong>⚠️ Warning:</strong> SMTP is not configured. Email notifications will not be sent. Please configure SMTP settings in your .env file.
+              </p>
+            </div>
+          )}
           <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#DBEAFE', borderRadius: '8px' }}>
             <p style={{ fontSize: '0.875rem', color: '#1E40AF', margin: 0 }}>
               <strong>Recipients:</strong> {recipients.filter(r => r.isActive).length} active

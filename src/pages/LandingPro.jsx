@@ -489,7 +489,7 @@ export default function LandingPro() {
                         <span>Hydro-FlowGauge</span>
                     </div>
                     <p className="footer-text">
-                       Stay save ands save your water with Hydro-FlowGauge!...
+                       Stay safe and save your water with Hydro-FlowGauge!
                     </p>
                 </div>
             </footer>
