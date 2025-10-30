@@ -6,7 +6,7 @@ import "../styles/Dashboard.css";
 function MeterGauge({ value = 0, max = 30 }) {
     const safeValue = Math.max(0, Math.min(value, max));
     const percentage = (safeValue / max) * 100;
-    const circumference = 2 * Math.PI * 45; // radius = 45
+    const circumference = 2 * Math.PI * 45;
     const strokeDashoffset = circumference - (percentage / 100) * circumference;
 
     return (
@@ -43,7 +43,7 @@ export default function Dashboard() {
         if (!isMountedRef.current) return;
         
         try {
-            const res = await API.get("/data/flow-lite");
+            const res = await API.get("/data/flow");
             if (isMountedRef.current) {
                 setFlow(res.data);
                 // Clear error on successful fetch
