@@ -89,7 +89,7 @@ export default function Dashboard() {
         setSuccess("");
         
         try {
-            const res = await API.post("/data/valve", { action: "open" });
+            await API.post("/data/valve", { action: "open" });
             if (isMountedRef.current) {
                 setSuccess("✅ Valve OPEN command sent! ESP32 will process within 10-15 seconds.");
                 
@@ -111,10 +111,7 @@ export default function Dashboard() {
         }
     }, []);
 
-    const handleLogout = () => {
-        localStorage.removeItem("token");
-        navigate("/");
-    };
+    // Logout is handled by Clerk's UserButton component
 
     return (
         <div className="dashboard-pro">
