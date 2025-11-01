@@ -10,9 +10,19 @@ if (!PUBLISHABLE_KEY) {
   throw new Error('Missing Publishable Key')
 }
 
+// Detect if running in mobile app
+const isMobileApp = window.location.protocol === 'capacitor:' || 
+                    window.location.protocol === 'http:' && window.location.hostname === 'localhost';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+    <ClerkProvider 
+      publishableKey={PUBLISHABLE_KEY}
+      afterSignInUrl="/dashboard"
+      afterSignUpUrl="/dashboard"
+      signInUrl="/login"
+      signUpUrl="/signup"
+    >
       <App />
     </ClerkProvider>
   </React.StrictMode>

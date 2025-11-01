@@ -48,12 +48,18 @@ export default function App() {
         
         <Route path="/login" element={
           <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'}}>
-            <SignIn routing="path" path="/login" signUpUrl="/signup" afterSignInUrl="/dashboard" />
+            <SignIn 
+              redirectUrl="/dashboard"
+              signUpUrl="/signup"
+            />
           </div>
         } />
         <Route path="/signup" element={
           <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'}}>
-            <SignUp routing="path" path="/signup" signInUrl="/login" afterSignUpUrl="/dashboard" />
+            <SignUp 
+              redirectUrl="/dashboard"
+              signInUrl="/login"
+            />
           </div>
         } />
         

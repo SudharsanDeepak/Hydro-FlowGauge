@@ -5,7 +5,8 @@
   "bundledWebRuntime": false,
   "server": {
     "cleartext": true,
-    "androidScheme": "https"
+    "androidScheme": "https",
+    "hostname": "app.hydroflow.local"
   },
   "plugins": {
     "SplashScreen": {
