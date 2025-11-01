@@ -4,9 +4,8 @@
   "webDir": "dist",
   "bundledWebRuntime": false,
   "server": {
-    "cleartext": true,
     "androidScheme": "https",
-    "hostname": "app.hydroflow.local"
+    "hostname": "localhost"
   },
   "plugins": {
     "SplashScreen": {
@@ -15,6 +14,11 @@
       "showSpinner": true,
       "androidSpinnerStyle": "large",
       "spinnerColor": "#ffffff"
+    },
+    "StatusBar": {
+      "style": "Dark",
+      "backgroundColor": "#1e3a8a",
+      "overlaysWebView": false
     }
   }
 }
