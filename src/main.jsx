@@ -14,14 +14,28 @@ if (!PUBLISHABLE_KEY) {
 const isMobileApp = window.location.protocol === 'capacitor:' || 
                     window.location.protocol === 'http:' && window.location.hostname === 'localhost';
 
+// Get current origin for redirects
+const getRedirectUrl = (path) => {
+  if (typeof window !== 'undefined') {
+    const origin = window.location.origin;
+    // For mobile app, use relative paths
+    if (isMobileApp || origin.includes('localhost')) {
+      return path;
+    }
+    return `${origin}${path}`;
+  }
+  return path;
+};
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ClerkProvider 
       publishableKey={PUBLISHABLE_KEY}
-      afterSignInUrl="/dashboard"
-      afterSignUpUrl="/dashboard"
-      signInUrl="/login"
-      signUpUrl="/signup"
+      afterSignInUrl={getRedirectUrl("/dashboard")}
+      afterSignUpUrl={getRedirectUrl("/dashboard")}
+      signInUrl={getRedirectUrl("/login")}
+      signUpUrl={getRedirectUrl("/signup")}
+      navigate={(to) => window.location.href = to}
     >
       <App />
     </ClerkProvider>
