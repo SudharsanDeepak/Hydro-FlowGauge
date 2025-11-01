@@ -36,6 +36,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-light);
   color: var(--text-dark);
+  
+  /* Mobile: Respect safe areas (status bar, notches, rounded corners) */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  
+  /* Prevent content from touching edges on mobile */
+  box-sizing: border-box;
 }
 
 a {

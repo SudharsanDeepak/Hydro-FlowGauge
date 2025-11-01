@@ -3,8 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/image.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Hydro-FlowGauge</title>
+    <style>
+      /* Ensure content respects safe areas (status bar, notches) */
+      body {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+      }
+      
+      /* Prevent content from touching status bar on mobile */
+      #root {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
